@@ -3,9 +3,6 @@
 
 // Dynamic route
 // we can create dynamic route simply with the square brackets [country_name]
-
-import { log } from "console";
-
 //
 export default function Countries({params}:{params:[country:string]}){
     type Country = {
