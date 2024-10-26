@@ -2,9 +2,11 @@
 
 
 // Dynamic route
-// we can create dynamic route simply with the square brackets [country_name]
+// we can create dynamic route simply with the square brackets [country_name] 
 //
-export default function Countries({params}:{params:[country:string]}){
+import Pakistan from "../../component/pak"
+export default function Countries({params}){
+    // :{params:[country:string]}
     type Country = {
         name: string,
         population: string,
@@ -12,7 +14,7 @@ export default function Countries({params}:{params:[country:string]}){
         language: string
     };
     
-    let country : Country[] = [
+    const country : Country[] = [
         {name:"Pakistan",population:"235.8 million",capital:"Islamabad" ,language:"Urdu"},
         {name :"India",population:"1.417 billion",capital:"New Delhi" , language:"Hindi"  },
         {name:"China",population:"1.412 billion" ,capital:"Beiging" , language:"Mandarin"},
@@ -20,8 +22,14 @@ export default function Countries({params}:{params:[country:string]}){
         {name:"Japan",population:"125.1 million",capital:"Tokyo" , language:"Japanese"},
     ]
 
-   let countryData = (country.find(book => book.name.toLowerCase() === params.country))
+   const countryData = (country.find(book => book.name.toLowerCase() === params.country))
+// console.log(params);
 
+// return(
+//     <div>
+//         {params.country === "pakistan" ? <Pakistan/> :params.country === "india" ? "india" : "not found"}
+//     </div>
+// )
    
     return(
         <div className="p-1 m-1">
